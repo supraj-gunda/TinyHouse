@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tiny House - Record Player</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <script defer src="recordPlayer.js"></script>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100vh;
+      }
+
+      body {
+        background-image: url('bedroomWinter.gif');
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        font-family: "videogame";
+      }
+
+      .box {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #d4efff;
+        border-radius: 12px;
+        padding-left: 7px;
+        padding-right: 7px;
+        text-align: center;
+      }
+
+      button {
+        border-radius: 12px;
+        padding: 15px 32px;
+        background-color: #d4efff;
+        border-color: #d4efff;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        font-family: "videogame";
+        font-weight: 500;
+        font-size: 18px;
+      }
+
+      button:hover {
+        background-color: #3a90ff;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 40px;
+        border-radius: 20px;
+        width: 70%;
+        height: 70%;
+      }
+
+      .upload-area {
+        text-align: center;
+        flex: 1;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+      }
+
+      input[type="file"] {
+        display: block;
+        margin: 0 auto;
+        font-size: 20px;
+      }
+
+      audio {
+        display: block;
+        margin-top: 20px;
+        width: 100%;
+      }
+
+      .record-player {
+        flex: 1;
+        width: 300px;
+        height: auto;
+      }
+
+      @font-face {
+        font-family: 'videogame';
+        src: url('Silkscreen/Silkscreen-Regular.ttf');
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="box">
+      <a href="bedroom.html">
+        <button>go back</button>
+      </a>
+    </div>
+    <div class="container">
+      <div class="upload-area">
+        <h1>Upload an MP3</h1>
+        <input type="file" id="fileInput" accept=".mp3">
+        <audio id="audioPlayer" controls style="display: none;"></audio>
+      </div>
+      <img src="recordPlayer.gif" alt="Spinning Record Player" class="record-player">
+    </div>
+  </body>
+</html>

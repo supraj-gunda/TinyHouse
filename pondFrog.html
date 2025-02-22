@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Tiny House - Poke the Frog</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <script defer src="talkingFrog.js"></script>
+    
+    <style>
+      body {
+        background-image: url('pondFrogBackground.gif');
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: "videogame";
+      }
+
+      /* Back Button */
+      .box {
+        border-radius: 12px;
+        background-color: #ffc395;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding: 10px;
+        text-align: center;
+      }
+
+      /* Frog and Poke Area Layout */
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 40px;
+        border-radius: 20px;
+        width: 70%;
+        height: 70%;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .frog-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .frog-image {
+        width: 500px;  /* Increased Frog Size */
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      .frog-image:active {
+        transform: scale(1.1);
+      }
+
+      .poke-counter {
+        font-size: 22px;
+        font-weight: bold;
+        font-family: "videogame";
+        min-width: 100px;
+        text-align: center;
+      }
+
+      .poke-area {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .poke-response {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        margin-top: 10px;
+        min-height: 30px;
+      }
+
+      @font-face {
+        font-family: 'videogame';
+        src: url('Silkscreen/Silkscreen-Regular.ttf');
+      }
+
+      button {
+        border-radius: 12px;
+        padding: 15px 32px;
+        background-color: #ffc395;
+        border-color: #ffc395;
+        border-width: 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        text-align: center;
+        line-height: 30px;
+        font-family: "videogame";
+        font-weight: 500;
+        font-size: 18px;
+      }
+
+      button:hover {
+        background-color: #ff923c;
+      }
+
+      .box {
+        border-radius: 12px;
+        background-color: #ffc395;
+        margin-top: 10px;
+        margin-right: 1525px;
+        margin-left: 10px;
+        padding-left: 7px;
+        padding-right: 7px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        text-align: center;
+      }
+    </style>      
+  </head>
+  
+  <body>
+    <audio id="bgMusic" autoplay loop>
+      <source src="music/frogs.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>    
+
+    <!-- Back Button -->
+    <div class="box">
+      <a href="pond.html">
+        <button>go back</button>
+      </a>
+    </div>
+
+    <!-- Frog and Poke Area -->
+    <div class="container">
+      <h1>Poke the Frog</h1>
+      <div class="frog-container">
+        <img src="pondFrog.gif" alt="Frog" class="frog-image" onclick="pokeFrog()">
+        <p id="pokeCounter" class="poke-counter">0</p>
+      </div>
+      <div class="poke-area">
+        <p id="pokeResponse" class="poke-response"></p>
+      </div>
+    </div>
+  </body>
+</html>

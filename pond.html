@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Tiny House</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <style>
+      body {
+        background-image: url('pondFall.gif');
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+      }
+      button {
+        border-radius: 12px;
+        padding: 15px 32px;
+
+        background-color: #ffc395;
+        border-color: #ffc395;
+        border-width: 2px;
+
+        transition-duration: 0.4s;
+        cursor: pointer;
+
+        text-align: center;
+        line-height: 30px;
+
+        font-family: "videogame";
+        font-weight: 500;
+        font-size: 18px;
+      }
+      button:hover {
+        background-color: #ff923c;
+      }
+      .box {
+        border-radius: 12px;
+        background-color: #ffc395;
+        margin-top: 10px;
+        margin-right: 1160px;
+        margin-left: 10px;
+
+        text-align: center;
+      }
+      @font-face {
+        font-family: 'videogame';
+        src: url('Silkscreen/Silkscreen-Regular.ttf');
+      }
+
+      </style>      
+  </head>
+  <body>
+    <!-- You can put your HTML here -->
+    <audio id="bgMusic" autoplay loop>
+      <source src="music/pondWaves.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>    
+    <div class="box">
+      <a href="index.html">
+        <button>go back</button>
+      </a>
+      <a href="pondRelax.html">
+        <button>relax</button>
+      </a>
+      <a href="pondFrog.html">
+        <button>bother a frog</button>
+      </a>
+    </div>
+  </body>
+</html>

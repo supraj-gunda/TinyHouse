@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Tiny House</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <style>
+      body {
+        background-image: url('tinyHouse.gif');
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+      }
+      button {
+        border-radius: 12px;
+        padding: 15px 32px;
+
+        background-color: #fff4bf;
+        border-color: #fff4bf;
+        border-width: 2px;
+
+        transition-duration: 0.4s;
+        cursor: pointer;
+
+        text-align: center;
+        line-height: 30px;
+        width: 305px;
+
+        font-family: "videogame";
+        font-weight: 500;
+        font-size: 18px;
+      }
+      button:hover {
+        background-color: #FEE43C;
+      }
+      .box {
+        border-radius: 12px;
+        background-color: #fff4bf;
+        margin-top: 10px;
+        margin-bottom: 100px;
+        margin-right: 1185px;
+        margin-left: 215px;
+        text-align: center;
+        font-family: 'videogame';
+        font-weight: 1000;
+        font-size: 14px;
+      }
+      @font-face {
+        font-family: 'videogame';
+        src: url('Silkscreen/Silkscreen-Regular.ttf');
+      }
+      </style>      
+  </head>
+  <body >
+    <!-- You can put your HTML here -->
+    <audio id="bgMusic" autoplay loop>
+      <source src="music/homeSounds.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>    
+    <img src="tinyHouseLogo.png" alt="tiny house logo">
+    <div class="box">
+      where would you like to go?
+      <a href="bedroom.html">
+        <button>bedroom</button>
+      </a>
+      <br>
+      <a href="greenhouse.html">
+        <button>greenhouse</button>
+      </a>
+      <br>
+      <a href="pond.html">
+        <button>pond</button>
+      </a>
+    </div>
+  </body>
+</html>
