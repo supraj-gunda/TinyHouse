@@ -8,75 +8,6 @@
     <script defer src="talkingFrog.js"></script>
     
     <style>
-      body {
-        background-image: url('pondFrogBackground.gif');
-        background-repeat: no-repeat;
-        background-attachment: fixed;  
-        background-size: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-family: "videogame";
-      }
-
-      /* Frog and Poke Area Layout */
-      .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(255, 255, 255, 0.85);
-        padding: 40px;
-        border-radius: 20px;
-        width: 70%;
-        height: 70%;
-        flex-direction: column;
-        position: relative;
-      }
-
-      .frog-container {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-
-      .frog-image {
-        width: 500px;  /* Increased Frog Size */
-        height: auto;
-        cursor: pointer;
-        transition: transform 0.2s;
-      }
-
-      .frog-image:active {
-        transform: scale(1.1);
-      }
-
-      .poke-counter {
-        font-size: 22px;
-        font-weight: bold;
-        font-family: "videogame";
-        min-width: 100px;
-        text-align: center;
-      }
-
-      .poke-area {
-        text-align: center;
-        margin-top: 20px;
-      }
-
-      .poke-response {
-        font-size: 20px;
-        font-weight: bold;
-        color: #333;
-        margin-top: 10px;
-        min-height: 30px;
-      }
-
-      @font-face {
-        font-family: 'videogame';
-        src: url('Silkscreen/Silkscreen-Regular.ttf');
-      }
-
       button:hover {
         background-color: #ff923c;
       }
@@ -103,7 +34,78 @@
         font-weight: 500;
         font-size: 18px;
       }
-      .sound-button {
+      
+      body {
+        background-image: url('pondFrogBackground.gif');
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-family: "videogame";
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.80);
+        padding: 40px;
+        border-radius: 20px;
+        width: 70%;
+        height: 70%;
+        flex-direction: column;
+        position: relative;
+        top: 100px;
+      }
+
+      .frogBox {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .frogImage {
+        width: 500px;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.2s;
+        margin-bottom: 50px;
+        margin-top: -70px;
+      }
+
+      .frogImage:active {
+        transform: scale(1.15);
+      }
+
+      .pokeArea {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .pokeResponse {
+        font-size: 20px;
+        font-weight: bold;
+        color: #000000;
+        margin-top: 10px;
+        min-height: 30px;
+      }
+
+      .pokeCounter {
+        font-size: 22px;
+        font-weight: bold;
+        font-family: "videogame";
+        min-width: 100px;
+        text-align: center;
+      }
+
+      @font-face {
+        font-family: 'videogame';
+        src: url('Silkscreen/Silkscreen-Regular.ttf');
+      }
+      .soundButton {
         position: absolute;
         top: 15px;
         right: 20px;
@@ -114,7 +116,7 @@
         border-radius: 12px;
         padding: 5px;
       }
-      .sound-button img {
+      .soundButton img {
         width: 50px;
         height: 50px;
       }
@@ -123,7 +125,7 @@
       document.addEventListener("DOMContentLoaded", function () {
           const bgMusic = document.getElementById("bgMusic");
           const soundIcon = document.getElementById("soundIcon");
-          const volume = bgMusic.getAttribute("dataVol");
+          const volume = bgMusic.getAttribute("dataVolume");
 
           function toggleSound() {
               if (bgMusic.paused) {
@@ -135,36 +137,34 @@
                   soundIcon.src = "soundOff.png";
               }
           }
-          document.querySelector(".sound-button").addEventListener("click", toggleSound);
+          document.querySelector(".soundButton").addEventListener("click", toggleSound);
       });
-    </script>         
+    </script>
   </head>
   
   <body>
-    <audio id="bgMusic" loop dataVol="0.4">
+    <audio id="bgMusic" loop dataVolume="0.4">
       <source src="music/frogs.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
+      Browser is not compatible with the audio element
     </audio>  
-    <div class="sound-button" onclick="toggleSound()">
+    <div class="soundButton" onclick="toggleSound()">
     <img id="soundIcon" src="soundOff.png" alt="Sound Toggle">
     </div>  
 
-    <!-- Back Button -->
     <div class="box">
       <a href="pond.html">
         <button>go back</button>
       </a>
     </div>
 
-    <!-- Frog and Poke Area -->
     <div class="container">
       <h1>Poke the Frog</h1>
-      <div class="frog-container">
-        <img src="pondFrog.gif" alt="Frog" class="frog-image" onclick="pokeFrog()">
-        <p id="pokeCounter" class="poke-counter">0</p>
+      <div class="frogBox">
+        <img src="pondFrog.gif" alt="Frog" class="frogImage" onclick="pokeFrog()">
+        <p id="pokeCounter" class="pokeCounter">0</p>
       </div>
-      <div class="poke-area">
-        <p id="pokeResponse" class="poke-response"></p>
+      <div class="pokeArea">
+        <p id="pokeResponse" class="pokeResponse"></p>
       </div>
     </div>
   </body>

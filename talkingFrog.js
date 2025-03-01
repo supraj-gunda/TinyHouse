@@ -1,7 +1,6 @@
 let pokeCount = 0;
 
 function pokeFrog() {
-    // List of possible responses
     const messages = [
         "The frog blinks at you.",
         "The frog croaks loudly!",

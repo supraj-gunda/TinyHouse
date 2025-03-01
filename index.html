@@ -50,7 +50,7 @@
         font-family: 'videogame';
         src: url('Silkscreen/Silkscreen-Regular.ttf');
       }
-      .sound-button {
+      .soundButton {
         position: fixed;
         top: 15px;
         right: 20px;
@@ -61,7 +61,7 @@
         border-radius: 12px;
         padding: 5px;
       }
-      .sound-button img {
+      .soundButton img {
         width: 50px;
         height: 50px;
       }
@@ -70,7 +70,7 @@
         document.addEventListener("DOMContentLoaded", function () {
             const bgMusic = document.getElementById("bgMusic");
             const soundIcon = document.getElementById("soundIcon");
-            const volume = bgMusic.getAttribute("dataVol");
+            const volume = bgMusic.getAttribute("dataVolume");
   
             function toggleSound() {
                 if (bgMusic.paused) {
@@ -82,17 +82,17 @@
                     soundIcon.src = "soundOff.png";
                 }
             }
-            document.querySelector(".sound-button").addEventListener("click", toggleSound);
+            document.querySelector(".soundButton").addEventListener("click", toggleSound);
         });
       </script>     
   </head>
   <body>
     <!-- You can put your HTML here -->
-    <audio id="bgMusic" loop dataVol="0.7">
+    <audio id="bgMusic" loop dataVolume="0.7">
       <source src="music/homeSounds.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
+      Browser is not compatible with the audio element
     </audio>  
-    <div class="sound-button" onclick="toggleSound()">
+    <div class="soundButton" onclick="toggleSound()">
     <img id="soundIcon" src="soundOff.png" alt="Sound Toggle">
     </div>
 

@@ -6,26 +6,6 @@
     <meta name="viewport" content="width=device-width, user-scalable=no" />
     <script defer src="recordPlayer.js"></script>
     <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        height: 100vh;
-      }
-
-      body {
-        background-image: url('bedroomWinter.gif');
-        background-repeat: no-repeat;
-        background-attachment: fixed;  
-        background-size: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        flex-direction: column;
-        font-family: "videogame";
-      }
-
       .box {
         position: absolute;
         top: 15px;
@@ -54,18 +34,40 @@
         background-color: #3a90ff;
       }
 
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+      }
+
+      body {
+        background-image: url('bedroomWinter.gif');
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        flex-direction: column;
+
+        font-family: "videogame";
+      }
+
       .container {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: rgba(255, 255, 255, 0.7);
+        background: rgba(255, 255, 255, 0.80);
         padding: 40px;
         border-radius: 20px;
         width: 70%;
         height: 70%;
       }
 
-      .upload-area {
+      .uploadArea {
         text-align: center;
         flex: 1;
       }
@@ -86,7 +88,7 @@
         width: 100%;
       }
 
-      .record-player {
+      .recordPlayer {
         flex: 1;
         width: 300px;
         height: auto;
@@ -106,12 +108,12 @@
       </a>
     </div>
     <div class="container">
-      <div class="upload-area">
+      <div class="uploadArea">
         <h1>Upload an MP3</h1>
         <input type="file" id="fileInput" accept=".mp3">
         <audio id="audioPlayer" controls style="display: none;"></audio>
       </div>
-      <img src="recordPlayer.gif" alt="Spinning Record Player" class="record-player">
+      <img src="recordPlayer.gif" alt="Spinning Record Player" class="recordPlayer">
     </div>
   </body>
 </html>
