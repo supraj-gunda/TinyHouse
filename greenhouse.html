@@ -36,10 +36,9 @@
       }
       .box {
         border-radius: 12px;
-        background-color: #ffe4f8;
-        margin-top: 10px;
+        margin-top: 15px;
         margin-right: 1160px;
-        margin-left: 10px;
+        margin-left: -20px;
 
         text-align: center;
       }
@@ -47,14 +46,53 @@
         font-family: 'videogame';
         src: url('Silkscreen/Silkscreen-Regular.ttf');
       }
+      .sound-button {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        background-color: #ffe4f8;
+        border-radius: 12px;
+        padding: 5px;
+      }
+      .sound-button img {
+        width: 50px;
+        height: 50px;
+      }
       </style>     
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const bgMusic = document.getElementById("bgMusic");
+            const soundIcon = document.getElementById("soundIcon");
+            const volume = bgMusic.getAttribute("dataVol");
+  
+            function toggleSound() {
+                if (bgMusic.paused) {
+                    bgMusic.volume = parseFloat(volume);  
+                    bgMusic.play();
+                    soundIcon.src = "soundOn.png";
+                } else {
+                    bgMusic.pause();
+                    soundIcon.src = "soundOff.png";
+                }
+            }
+            document.querySelector(".sound-button").addEventListener("click", toggleSound);
+        });
+      </script> 
+          
   </head>
   <body>
     <!-- You can put your HTML here -->
-    <audio id="bgMusic" autoplay loop>
-      <source src="music/greenhouseGrowPlantRain.mp3" type="audio/mpeg">
+    <audio id="bgMusic" loop dataVol="0.03">
+      <source src="music/greenhouseRain.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
-    </audio>    
+    </audio>  
+    <div class="sound-button" onclick="toggleSound()">
+    <img id="soundIcon" src="soundOff.png" alt="Sound Toggle">
+    </div>
+
     <div class="box">      
       <a href="index.html">
         <button>go back</button>
