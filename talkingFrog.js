@@ -12,7 +12,6 @@ function pokeFrog() {
         "The frog stares into your soul.",
         "The frog sent a mosquito to your address.",
         "The frog wants to fight.",
-        "The frog will spread rumors about you.",
         "The frog has a doctor's appointment.",
         "The frog will not be provoked.",
         "The frog predicts you'll have a good day.",
